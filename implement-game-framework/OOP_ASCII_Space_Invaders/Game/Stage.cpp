@@ -6,29 +6,8 @@
 
 static int stageNum = STAGE_01;
 static char s_map[MAP_SIZE][MAP_SIZE];
-static int32_t s_playerX = 0;
-static int32_t s_playerY = 0;
-
+static Player* player;
 bool gameOver = false;
-
-void PlayerMove()
-{
-	int32_t s_nextPlayerX = s_playerX;
-	int32_t s_nextPlayerY = s_playerY;
-
-	if (GetButtonDown(KEYCODE_A))
-	{
-	}
-
-	else if (GetButtonDown(KEYCODE_D))
-	{
-	}
-
-	else if (GetButtonDown(KEYCODE_R))
-	{
-		LoadStage((EStageLevel)stageNum);
-	}
-}
 
 char parseMapType(size_t i, size_t j, char mapType)
 {
@@ -42,8 +21,7 @@ char parseMapType(size_t i, size_t j, char mapType)
 		return true;
 
 	case MAPTYPE_PLAYER:
-		s_playerX = (int)i;
-		s_playerY = (int)j;
+		player = new Player(j, i);
 		s_map[i][j] = mapType;
 		return true;
 
@@ -103,10 +81,18 @@ bool StageOver()
 
 void UpdateStage()
 {
-	PlayerMove();
+	int currentPlayerPosX = player->GetXpos();
+	int currentPlayerPosY = player->GetYpos();
+	player->UpdatePos();
+	if (!((currentPlayerPosX == player->GetXpos()) && (currentPlayerPosY == player->GetYpos())))
+	{
+		s_map[currentPlayerPosY][currentPlayerPosX] = ' ';
+		s_map[player->GetYpos()][player->GetXpos()] = 'A';
+	}
+
 }
 
 const char** GetMap()
 {
-	return (char**)s_map;
+	return (const char**)s_map;
 }

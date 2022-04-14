@@ -19,17 +19,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Framework\Game.c" />
-    <ClCompile Include="Framework\Input.c" />
-    <ClCompile Include="Framework\Renderer.c">
+    <ClCompile Include="Framework\Game.cpp" />
+    <ClCompile Include="Framework\Input.cpp" />
+    <ClCompile Include="Framework\Renderer.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Framework\Timer.c" />
+    <ClCompile Include="Framework\Timer.cpp" />
+    <ClCompile Include="Game\Player.cpp" />
+    <ClCompile Include="Game\Point.cpp" />
     <ClCompile Include="Game\Stage.cpp" />
-    <ClCompile Include="main.c" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="stdafx.c">
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
@@ -39,9 +40,10 @@
     <ClInclude Include="Framework\Input.h" />
     <ClInclude Include="Framework\Renderer.h" />
     <ClInclude Include="Framework\Timer.h" />
+    <ClInclude Include="Game\Player.h" />
+    <ClInclude Include="Game\Point.h" />
     <ClInclude Include="Game\Stage.h" />
     <ClInclude Include="Macro.h" />
-    <ClInclude Include="Player.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>

@@ -30,7 +30,7 @@ void processInput()
 
 void update()
 {
-	//UpdateStage();
+	UpdateStage();
 }	
 
 void render()

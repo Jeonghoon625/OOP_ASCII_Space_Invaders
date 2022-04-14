@@ -1,7 +1,7 @@
 #pragma once
 
 #include <stdio.h>
-#include <string.h>
+#include <cstring>
 #include <stdlib.h>
 #include <time.h>
 #include <assert.h>
@@ -12,4 +12,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <Windows.h>
+#include <iostream>
+#include <stdlib.h>
+#include <cmath>
 #include "Macro.h"
