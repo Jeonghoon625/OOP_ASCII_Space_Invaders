@@ -16,7 +16,7 @@ int Player::GetYpos()
 	return playerYpos;
 }
 
-void Player::UpdatePos() 
+void Player::nextPos() 
 {
 	if (GetButtonDown(KEYCODE_A))
 	{
@@ -38,5 +38,3 @@ void Player::UpdatePos()
 		playerYpos++;
 	}
 }
-
-

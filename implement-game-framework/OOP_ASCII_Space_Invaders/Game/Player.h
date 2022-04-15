@@ -11,6 +11,5 @@ public:
 	Player(int xpos, int ypos);
 	int GetXpos();
 	int GetYpos();
-	void UpdatePos();
+	void nextPos();
 };
-

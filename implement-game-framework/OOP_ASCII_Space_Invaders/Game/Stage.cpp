@@ -3,10 +3,13 @@
 #include "Framework/Timer.h"
 #include "Framework/Input.h"
 #include "Player.h"
+#include "Enemy.h"
 
 static int stageNum = STAGE_01;
 static char s_map[MAP_SIZE][MAP_SIZE];
 static Player* player;
+static Enemy* enemy;
+
 bool gameOver = false;
 
 char parseMapType(size_t i, size_t j, char mapType)
@@ -22,6 +25,11 @@ char parseMapType(size_t i, size_t j, char mapType)
 
 	case MAPTYPE_PLAYER:
 		player = new Player(j, i);
+		s_map[i][j] = mapType;
+		return true;
+
+	case MAPTYPE_ENEMY_TYPE_A:
+		enemy = new Enemy(j, i);
 		s_map[i][j] = mapType;
 		return true;
 
@@ -83,13 +91,21 @@ void UpdateStage()
 {
 	int currentPlayerPosX = player->GetXpos();
 	int currentPlayerPosY = player->GetYpos();
-	player->UpdatePos();
+	player->nextPos();
 	if (!((currentPlayerPosX == player->GetXpos()) && (currentPlayerPosY == player->GetYpos())))
 	{
 		s_map[currentPlayerPosY][currentPlayerPosX] = ' ';
 		s_map[player->GetYpos()][player->GetXpos()] = 'A';
 	}
 
+	int currentEnemyPosX = enemy->GetXpos();
+	int currentEnemyPosY = enemy->GetYpos();
+	enemy->UpdatePos();
+	if (!((currentEnemyPosX == enemy->GetXpos()) && (currentEnemyPosY == enemy->GetYpos())))
+	{
+		s_map[currentEnemyPosY][currentEnemyPosX] = ' ';
+		s_map[enemy->GetYpos()][enemy->GetXpos()] = 'O';
+	}
 }
 
 const char** GetMap()

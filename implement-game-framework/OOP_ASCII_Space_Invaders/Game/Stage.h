@@ -7,7 +7,7 @@
 
 typedef enum MapType
 {
-	MAPTYPE_WALL = '|',
+	MAPTYPE_WALL = '#',
 	MAPTYPE_PLAYER = 'A',
 	MAPTYPE_PLAYER_BULLET = '^',
 	MAPTYPE_ENEMY_TYPE_A = 'O',

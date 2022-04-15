@@ -26,6 +26,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Framework\Timer.cpp" />
+    <ClCompile Include="Game\ControllHandler.cpp" />
+    <ClCompile Include="Game\Enemy.cpp" />
     <ClCompile Include="Game\Player.cpp" />
     <ClCompile Include="Game\Point.cpp" />
     <ClCompile Include="Game\Stage.cpp" />
@@ -40,6 +42,8 @@
     <ClInclude Include="Framework\Input.h" />
     <ClInclude Include="Framework\Renderer.h" />
     <ClInclude Include="Framework\Timer.h" />
+    <ClInclude Include="Game\ControlHandler.h" />
+    <ClInclude Include="Game\Enemy.h" />
     <ClInclude Include="Game\Player.h" />
     <ClInclude Include="Game\Point.h" />
     <ClInclude Include="Game\Stage.h" />

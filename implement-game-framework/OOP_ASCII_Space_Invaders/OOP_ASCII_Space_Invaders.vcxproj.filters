@@ -39,6 +39,12 @@
     <ClCompile Include="Game\Point.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+    <ClCompile Include="Game\ControllHandler.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Enemy.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game\Stage.h">
@@ -66,6 +72,12 @@
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Game\Point.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\ControlHandler.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Enemy.h">
       <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
