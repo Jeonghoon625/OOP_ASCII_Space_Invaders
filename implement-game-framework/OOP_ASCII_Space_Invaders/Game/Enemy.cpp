@@ -17,14 +17,14 @@ int Enemy::GetYpos()
 	return enemyYpos; 
 }
 
-void Enemy::UpdatePos()
+void Enemy::Move()
 {
-	enemyTimer += GetDeltaTime();
+	/*enemyTimer += GetDeltaTime();
 	double delayTime = 1.0;
 
 	if (enemyTimer > delayTime)
 	{
 		enemyTimer = 0.0;
 		enemyYpos++;
-	}
+	}*/
 }

@@ -9,7 +9,8 @@ typedef enum KeyCode
 	KEYCODE_A = 'A',
 	KEYCODE_S = 'S',
 	KEYCODE_D = 'D',
-	KEYCODE_R = 'R'
+	KEYCODE_R = 'R',
+	KEYCODE_SPACE = ' '
 }EKeyCode;
 
 /// <summary>

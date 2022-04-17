@@ -11,5 +11,5 @@ public:
 	Enemy(int xpos, int ypos);
 	int GetXpos();
 	int GetYpos();
-	void UpdatePos();
+	void Move();
 };

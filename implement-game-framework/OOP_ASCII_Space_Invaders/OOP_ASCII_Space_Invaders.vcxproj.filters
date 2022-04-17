@@ -39,10 +39,19 @@
     <ClCompile Include="Game\Point.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-    <ClCompile Include="Game\ControllHandler.cpp">
+    <ClCompile Include="Game\ControlHandler.cpp">
       <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="Game\Enemy.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Move.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Crash.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Bullet.cpp">
       <Filter>Game</Filter>
     </ClCompile>
   </ItemGroup>
@@ -78,6 +87,15 @@
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Game\Enemy.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Move.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Crash.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Bullet.h">
       <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>

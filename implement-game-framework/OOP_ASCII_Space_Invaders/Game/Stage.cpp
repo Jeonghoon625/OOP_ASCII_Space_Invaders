@@ -4,11 +4,11 @@
 #include "Framework/Input.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "ControlHandler.h"
 
 static int stageNum = STAGE_01;
 static char s_map[MAP_SIZE][MAP_SIZE];
-static Player* player;
-static Enemy* enemy;
+static ControlHandler handler;
 
 bool gameOver = false;
 
@@ -24,12 +24,12 @@ char parseMapType(size_t i, size_t j, char mapType)
 		return true;
 
 	case MAPTYPE_PLAYER:
-		player = new Player(j, i);
+		handler.NewPlayer(new Player((int)j, (int)i));
 		s_map[i][j] = mapType;
 		return true;
 
 	case MAPTYPE_ENEMY_TYPE_A:
-		enemy = new Enemy(j, i);
+		handler.NewEnemy(new Enemy((int)j, (int)i));
 		s_map[i][j] = mapType;
 		return true;
 
@@ -79,6 +79,7 @@ void LoadStage(EStageLevel level)
 		}
 	}
 
+	handler.NewMap(s_map);
 	fclose(fp);
 }
 
@@ -89,23 +90,7 @@ bool StageOver()
 
 void UpdateStage()
 {
-	int currentPlayerPosX = player->GetXpos();
-	int currentPlayerPosY = player->GetYpos();
-	player->nextPos();
-	if (!((currentPlayerPosX == player->GetXpos()) && (currentPlayerPosY == player->GetYpos())))
-	{
-		s_map[currentPlayerPosY][currentPlayerPosX] = ' ';
-		s_map[player->GetYpos()][player->GetXpos()] = 'A';
-	}
-
-	int currentEnemyPosX = enemy->GetXpos();
-	int currentEnemyPosY = enemy->GetYpos();
-	enemy->UpdatePos();
-	if (!((currentEnemyPosX == enemy->GetXpos()) && (currentEnemyPosY == enemy->GetYpos())))
-	{
-		s_map[currentEnemyPosY][currentEnemyPosX] = ' ';
-		s_map[enemy->GetYpos()][enemy->GetXpos()] = 'O';
-	}
+	handler.Update();
 }
 
 const char** GetMap()

@@ -3,7 +3,7 @@
 
 class Player
 {
-private:
+public:
 	int playerXpos;
 	int playerYpos;
 
@@ -11,5 +11,7 @@ public:
 	Player(int xpos, int ypos);
 	int GetXpos();
 	int GetYpos();
-	void nextPos();
+	void SetXpos(int xpos);
+	void SetYpos(int ypos);
+	void Move();
 };
