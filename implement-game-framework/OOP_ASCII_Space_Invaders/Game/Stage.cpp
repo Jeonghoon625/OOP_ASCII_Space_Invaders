@@ -29,7 +29,12 @@ char parseMapType(size_t i, size_t j, char mapType)
 		return true;
 
 	case MAPTYPE_ENEMY_TYPE_A:
-		handler.NewEnemy(new Enemy((int)j, (int)i));
+		handler.NewEnemy(new Enemy(MAPTYPE_ENEMY_TYPE_A, (int)j, (int)i, 2));
+		s_map[i][j] = mapType;
+		return true;
+
+	case MAPTYPE_ENEMY_TYPE_B:
+		handler.NewEnemy(new Enemy(MAPTYPE_ENEMY_TYPE_B, (int)j, (int)i, 1));
 		s_map[i][j] = mapType;
 		return true;
 

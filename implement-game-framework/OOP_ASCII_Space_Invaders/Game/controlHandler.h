@@ -10,9 +10,14 @@ class ControlHandler
 {
 public:
 	Player* player;
-	Enemy* enemy;
-	Bullet* bullet;
+	Enemy* enemy[ENEMY_MAX];
+	Bullet* bullet[BULLET_MAX];
 	char(*s_map)[MAP_SIZE];
+
+	double shootTimer;
+	int bulletNum;
+	int enemyNum;
+	enum class direction{RIGHT};
 
 public:
 	ControlHandler();
@@ -22,8 +27,10 @@ public:
 	void NewMap(char(* s_map)[MAP_SIZE]);
 	void NewBullet();
 
-	void CrashBullet(int currXpos, int currYpos, int xpos, int ypos);
+	void CrashBullet(int currXpos, int currYpos, int i);
 	void CrashPlayer(int currXpos, int currYpos, int xpos, int ypos);
+
+	int FindEnemyIdx(int xpos, int ypos);
 	void Update();
 
 	~ControlHandler();

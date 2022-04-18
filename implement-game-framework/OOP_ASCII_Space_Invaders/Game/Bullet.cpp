@@ -24,7 +24,7 @@ MapType Bullet::GetType()
 void Bullet::Move()
 {
 	bulletTimer += GetDeltaTime();
-	double delayTime = 0.4;
+	double delayTime = 0.2;
 
 	if (bulletTimer >= delayTime)
 	{
